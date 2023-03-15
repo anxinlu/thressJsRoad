@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="build/three.js"></script>
+</head>
+<body>
+    
+</body>
+
+    <script>
+        const scene = new THREE.Scene() //初始化场景
+        const camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight ,0.1,2000)  //初始化透视相机 远大近小
+        const renderer= new THREE.WebGLRenderer() //初始化渲染器
+
+        renderer.setSize(window.innerWidth,window.innerHeight)
+
+        document.body.appendChild(renderer.domElement) //将canvas放置再body中
+
+        const geometry = new THREE.BoxGeometry(1,1,1) //初始化一个立方几何体
+
+        const material = new THREE.MeshBasicMaterial({color:'yellow'}) //初始化一个网格基础材质
+
+        const cube = new THREE.Mesh(geometry,material)  //使用该颜色的材质填充李立方几何体
+
+        scene.add(cube)  //将该立方体放置到场景中去
+
+        camera.position.z = 3 //设置相机的纵坐标
+
+        function render(){
+            requestAnimationFrame(render)
+            cube.rotation.x +=0.001;  //控制立方体在x轴方向上旋转的角度
+            cube.rotation.y +=0.001; //控制立方体的y轴方向上旋转的角度
+            renderer.render(scene,camera)
+        }
+
+
+        render()
+    </script>
+</html>

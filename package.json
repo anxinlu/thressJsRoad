@@ -1,0 +1,22 @@
+{
+  "name": "thressjsroad",
+  "version": "1.0.0",
+  "description": "threejsStudy\r ```测试md注释",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anxinlu/thressJsRoad.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anxinlu/thressJsRoad/issues"
+  },
+  "homepage": "https://github.com/anxinlu/thressJsRoad#readme",
+  "dependencies": {
+    "three": "^0.150.1"
+  }
+}
